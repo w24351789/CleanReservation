@@ -8,23 +8,19 @@
     ".NETCoreApp,Version=v3.0": []
   },
   "packageFolders": {
-    "C:\\Users\\atwta\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\TED\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\atwta\\Desktop\\dotnetcore\\CleanReservationApi\\CleanReservationApi\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\TED\\Desktop\\dotnetcore\\CleanReservationApi\\CleanReservationApi\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\atwta\\Desktop\\dotnetcore\\CleanReservationApi\\CleanReservationApi\\Domain.csproj",
-      "packagesPath": "C:\\Users\\atwta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\atwta\\Desktop\\dotnetcore\\CleanReservationApi\\CleanReservationApi\\obj\\",
+      "projectPath": "C:\\Users\\TED\\Desktop\\dotnetcore\\CleanReservationApi\\CleanReservationApi\\Domain.csproj",
+      "packagesPath": "C:\\Users\\TED\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\TED\\Desktop\\dotnetcore\\CleanReservationApi\\CleanReservationApi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\atwta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TED\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -62,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
