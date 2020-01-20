@@ -19,6 +19,22 @@ namespace Application.TimeHelpers
 
             return conflict;
         }
+
+        public static int JaintorTimeConflict(TimePeriod newAdd, JaintorTimePeriod orign)
+        {
+            int conflict = 0;
+            var newStar = TimeInDay(newAdd.StartTime);
+            var newEnd = TimeInDay(newAdd.EndTime);
+            var orignStar = TimeInDay(orign.StartTime);
+            var orignEnd = TimeInDay(orign.EndTime);
+
+            if ((newStar >= orignStar && newStar <= orignEnd) || (newEnd >= orignStar && newEnd <= orignEnd))
+            {
+                conflict++;
+            }
+
+            return conflict;
+        }
         public static int TimeInDay(DateTime time)
         {
             return time.Hour * 60 + time.Minute;

@@ -43,5 +43,17 @@ namespace WebApi.Controllers
         {
             return await Mediator.Send(new DeleteJaintor.Command { JaintorId = jaintorId });
         }
+
+        [HttpGet("{jaintorId}/reservationperiod")]
+        public async Task<ActionResult<List<ReservationPeriod>>> GetReservationPeriodByJaintor(Guid jaintorId)
+        {
+            return await Mediator.Send(new GetReservationPeriodByJaintor.Query { JaintorId = jaintorId });
+        }
+
+        [HttpGet("booking/{jaintorId}")]
+        public async Task<ActionResult<List<Booking>>> GetBookingByJaintor(Guid jaintorId)
+        {
+            return await Mediator.Send(new GetBookingByJaintor.Query { JaintorId = jaintorId });
+        }
     }
 }

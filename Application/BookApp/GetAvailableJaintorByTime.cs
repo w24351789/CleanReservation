@@ -1,5 +1,7 @@
-﻿using Domain;
+﻿using Application.TimeHelpers;
+using Domain;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Persistence;
 using System;
 using System.Collections.Generic;
@@ -32,27 +34,52 @@ namespace Application.BookApp
             {
                 //加入該時段有空的人員交集該時段沒有預約的人員 
                 var bookingDayOfWeek = request.BookingDate.DayOfWeek;
-                var jaintors = _context.ReservationPeriods.Where(rp => rp.DayOfWeek == bookingDayOfWeek)
-                                                          .Where(rp => TimeInDay(rp.StartTime) <= TimeInDay(request.StartTime) && TimeInDay(rp.EndTime) <= TimeInDay(request.EndTime))
-                                                          .Select(rp => rp.Jaintor)
-                                                          .Intersect(
-                                                             _context.Bookings.Where(b => b.BookingDate == request.BookingDate)
-                                                                              .Where(b => TimeInDay(request.StartTime) > TimeInDay(b.EndTime) || TimeInDay(request.EndTime) < TimeInDay(b.StartTime))
-                                                                              .Select(b => b.Jaintor)
-                                                           )
-                                                          .ToList();
-                 
-                if (jaintors == null)
-                    throw new Exception($"{request.BookingDate} Booked up ");
+                var bookingTimePeriod = new TimePeriod { StartTime = request.StartTime, EndTime = request.EndTime };
 
-                return await Task.FromResult(jaintors);
+                var JaintorTimePeriods = await _context.ReservationPeriods.Where(rp => rp.DayOfWeek == bookingDayOfWeek)
+                                                                          .Select(rp => new JaintorTimePeriod { 
+                                                                                StartTime = rp.StartTime,
+                                                                                EndTime = rp.EndTime,
+                                                                                Jaintor = rp.Jaintor
+                                                                            })
+                                                                          .ToListAsync();
+
+                var jaintors = await _context.Jaintors.ToListAsync();
+
                 
+                foreach (var jtp in JaintorTimePeriods)
+                {
+                    var conflict = TimeHelper.JaintorTimeConflict(bookingTimePeriod, jtp);
+                    if (conflict > 0)
+                        jaintors.Remove(jtp.Jaintor);
+
+                }
+
+
+                //理想情況想做到可以排除該天無法的Jaintor再來排除衝突的booking，目前的作法是將其有空地加入，再移除被預約走的
+
+                var JaintorBookingPeriods = await _context.Bookings.Where(b => b.BookingDate == request.BookingDate)
+                                                                          .Select(b => new JaintorTimePeriod
+                                                                          {
+                                                                              StartTime = b.StartTime,
+                                                                              EndTime = b.EndTime,
+                                                                              Jaintor = b.Jaintor
+                                                                          })
+                                                                          .ToListAsync();
+                
+                foreach (var jbp in JaintorBookingPeriods)
+                {
+                    var conflict = TimeHelper.JaintorTimeConflict(bookingTimePeriod, jbp);
+                    if (conflict > 0)
+                        jaintors.Remove(jbp.Jaintor);
+                    
+                }
+
+                return jaintors;
+
             }
 
-            public int TimeInDay(DateTime time)
-            {
-                return time.Hour * 60 + time.Minute; 
-            }
+            
         }
     }
 }

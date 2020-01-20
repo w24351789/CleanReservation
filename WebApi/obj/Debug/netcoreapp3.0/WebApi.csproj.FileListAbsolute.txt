@@ -135,7 +135,6 @@ C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreap
 C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\obj\Debug\netcoreapp3.0\WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\MediatR.dll
 C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\TED\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\appsettings.Development.json
@@ -278,3 +277,9 @@ C:\Users\TED\Desktop\dotnetcore\CleanReservationApi\WebApi\obj\Debug\netcoreapp3
 C:\Users\TED\Desktop\dotnetcore\CleanReservationApi\WebApi\obj\Debug\netcoreapp3.0\WebApi.csproj.CopyComplete
 C:\Users\TED\Desktop\dotnetcore\CleanReservationApi\WebApi\obj\Debug\netcoreapp3.0\WebApi.dll
 C:\Users\TED\Desktop\dotnetcore\CleanReservationApi\WebApi\obj\Debug\netcoreapp3.0\WebApi.pdb
+C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\Microsoft.OpenApi.dll
+C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\obj\Debug\netcoreapp3.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\obj\Debug\netcoreapp3.0\WebApi.MvcApplicationPartsAssemblyInfo.cache

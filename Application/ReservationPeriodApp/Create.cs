@@ -51,6 +51,7 @@ namespace Application.ReservationPeriodApp
                     //找到此人此日此時有安排時段了
                     conflictTimes = TimeHelper.TimeConflict(requestTimePeriod, t);
                 }
+                
                                    
                 //找到的安排不為空值時，代表沒空
                 if (conflictTimes > 0)

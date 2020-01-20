@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using Persistence;
 
 namespace WebApi
@@ -24,6 +25,12 @@ namespace WebApi
         {
             services.AddMediatR(typeof(GetJaintors.Handler).Assembly);
             services.AddControllers();
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Clean Reservation API", Version = "v1" });
+                c.CustomSchemaIds(i => i.FullName);
+            });
             services.AddDbContext<DataContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
@@ -38,6 +45,15 @@ namespace WebApi
                 app.UseDeveloperExceptionPage();
             }
             //context.SeedDataContext();
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Clean Reservation V1");
+            });
 
             app.UseHttpsRedirection();
 
