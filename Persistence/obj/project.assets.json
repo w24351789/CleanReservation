@@ -5059,23 +5059,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\atwta\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\TED\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\atwta\\Desktop\\dotnetcore\\CleanReservationApi\\Persistence\\Persistence.csproj",
+      "projectUniqueName": "C:\\Users\\TED\\Desktop\\dotnetcore\\CleanReservationApi\\Persistence\\Persistence.csproj",
       "projectName": "Persistence",
-      "projectPath": "C:\\Users\\atwta\\Desktop\\dotnetcore\\CleanReservationApi\\Persistence\\Persistence.csproj",
-      "packagesPath": "C:\\Users\\atwta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\atwta\\Desktop\\dotnetcore\\CleanReservationApi\\Persistence\\obj\\",
+      "projectPath": "C:\\Users\\TED\\Desktop\\dotnetcore\\CleanReservationApi\\Persistence\\Persistence.csproj",
+      "packagesPath": "C:\\Users\\TED\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\TED\\Desktop\\dotnetcore\\CleanReservationApi\\Persistence\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\atwta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TED\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5088,8 +5084,8 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
-            "C:\\Users\\atwta\\Desktop\\dotnetcore\\CleanReservationApi\\CleanReservationApi\\Domain.csproj": {
-              "projectPath": "C:\\Users\\atwta\\Desktop\\dotnetcore\\CleanReservationApi\\CleanReservationApi\\Domain.csproj"
+            "C:\\Users\\TED\\Desktop\\dotnetcore\\CleanReservationApi\\CleanReservationApi\\Domain.csproj": {
+              "projectPath": "C:\\Users\\TED\\Desktop\\dotnetcore\\CleanReservationApi\\CleanReservationApi\\Domain.csproj"
             }
           }
         }
@@ -5131,7 +5127,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

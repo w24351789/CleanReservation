@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Application.BookApp;
 using Domain;
-using Microsoft.AspNetCore.Http;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers
@@ -28,6 +27,18 @@ namespace WebApi.Controllers
         public async Task<ActionResult<List<Jaintor>>> GetAvailableJaintorByTime(GetAvailableJaintorByTime.Query query)
         {
             return await Mediator.Send(query);
+        }
+        
+        [HttpPost]
+        public async Task<ActionResult<Unit>> CreateBooking(CreateBooking.Command command)
+        {
+            return await Mediator.Send(command);
+        }
+
+        [HttpDelete("{bookingId}")]
+        public async Task<ActionResult<Unit>> DeleteBooking(Guid bookingId)
+        {
+            return await Mediator.Send(new DeleteBooking.Command { BookingId = bookingId});
         }
     }
 }

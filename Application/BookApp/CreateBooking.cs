@@ -1,8 +1,7 @@
-﻿using MediatR;
+﻿using Domain;
+using MediatR;
 using Persistence;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -28,9 +27,24 @@ namespace Application.BookApp
                 _context = context;
             }
 
-            public Task<Unit> Handle(Command request, CancellationToken cancellationToken)
+            public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
-                throw new NotImplementedException();
+                //串接此api前需要先用getavailablejaintorBytime來確定人員時間是可預約的
+                var booking = new Booking
+                {
+                    Id = request.Id,
+                    BookingDate = request.BookingDate,
+                    StartTime = request.StartTime,
+                    EndTime = request.EndTime,
+                    JaintorId = request.JaintorId
+                };
+
+                _context.Bookings.Add(booking);
+
+                var success = await _context.SaveChangesAsync() > 0;
+
+                if (success) return Unit.Value;
+                throw new Exception("Problem saving change");
             }
         }
     }

@@ -6,7 +6,6 @@ using Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -36,22 +35,22 @@ namespace Application.BookApp
                 var bookingDayOfWeek = request.BookingDate.DayOfWeek;
                 var bookingTimePeriod = new TimePeriod { StartTime = request.StartTime, EndTime = request.EndTime };
 
-                var JaintorTimePeriods = await _context.ReservationPeriods.Where(rp => rp.DayOfWeek == bookingDayOfWeek)
-                                                                          .Select(rp => new JaintorTimePeriod { 
-                                                                                StartTime = rp.StartTime,
-                                                                                EndTime = rp.EndTime,
-                                                                                Jaintor = rp.Jaintor
-                                                                            })
-                                                                          .ToListAsync();
+                var JaintorReservationPeriods = await _context.ReservationPeriods.Where(rp => rp.DayOfWeek == bookingDayOfWeek)
+                                                                                 .Select(rp => new JaintorTimePeriod { 
+                                                                                       StartTime = rp.StartTime,
+                                                                                       EndTime = rp.EndTime,
+                                                                                       Jaintor = rp.Jaintor
+                                                                                  })
+                                                                                 .ToListAsync();
 
                 var jaintors = await _context.Jaintors.ToListAsync();
 
                 
-                foreach (var jtp in JaintorTimePeriods)
+                foreach (var jrp in JaintorReservationPeriods)
                 {
-                    var conflict = TimeHelper.JaintorTimeConflict(bookingTimePeriod, jtp);
+                    var conflict = TimeHelper.JaintorTimeConflict(bookingTimePeriod, jrp);
                     if (conflict > 0)
-                        jaintors.Remove(jtp.Jaintor);
+                        jaintors.Remove(jrp.Jaintor);
 
                 }
 
@@ -59,13 +58,12 @@ namespace Application.BookApp
                 //理想情況想做到可以排除該天無法的Jaintor再來排除衝突的booking，目前的作法是將其有空地加入，再移除被預約走的
 
                 var JaintorBookingPeriods = await _context.Bookings.Where(b => b.BookingDate == request.BookingDate)
-                                                                          .Select(b => new JaintorTimePeriod
-                                                                          {
-                                                                              StartTime = b.StartTime,
-                                                                              EndTime = b.EndTime,
-                                                                              Jaintor = b.Jaintor
-                                                                          })
-                                                                          .ToListAsync();
+                                                                   .Select(b => new JaintorTimePeriod{
+                                                                        StartTime = b.StartTime,
+                                                                        EndTime = b.EndTime,
+                                                                        Jaintor = b.Jaintor
+                                                                    })
+                                                                   .ToListAsync();
                 
                 foreach (var jbp in JaintorBookingPeriods)
                 {

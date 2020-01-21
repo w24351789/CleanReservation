@@ -283,3 +283,8 @@ C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreap
 C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\obj\Debug\netcoreapp3.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\atwta\Desktop\dotnetcore\CleanReservationApi\WebApi\obj\Debug\netcoreapp3.0\WebApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\TED\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\Microsoft.OpenApi.dll
+C:\Users\TED\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\TED\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\TED\Desktop\dotnetcore\CleanReservationApi\WebApi\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\TED\Desktop\dotnetcore\CleanReservationApi\WebApi\obj\Debug\netcoreapp3.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
